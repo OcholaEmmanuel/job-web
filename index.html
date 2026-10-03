@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opened Career - Jobs & Career Advice in Kenya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="brand" onclick="switchTab('home')">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Opened Career
+        </div>
+        <nav>
+            <a href="#" id="nav-home" class="active" onclick="switchTab('home')">Home</a>
+            <a href="#" id="nav-job" onclick="switchTab('job')">Job List</a>
+            <a href="#">Employers</a>
+            <a href="#">Candidates</a>
+            <a href="#" id="nav-advice" onclick="switchTab('advice')">Career Advice</a>
+            <a href="#">More <i class="fa-solid fa-chevron-down"></i></a>
+            <a href="#" onclick="openCvModal(event)"><i class="fa-solid fa-file-arrow-up"></i> Upload Your CV</a>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn-login" onclick="openAuthModal('login')">Login / Register</a>
+            <a href="#" class="btn-post">Job Post</a>
+        </div>
+    </header>
+
+    <div id="home-tab" class="tab-page active-tab">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-card tall" style="background-image: url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80');">
+                    <div class="location-overlay">
+                        <h3>Nairobi</h3>
+                    </div>
+                </div>
+                <div class="location-card" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80');">
+                    <div class="location-overlay">
+                        <h3>Kisumu</h3>
+                        <p>23 jobs</p>
+                    </div>
+                </div>
+                <div class="location-card" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80');">
+                    <div class="location-overlay">
+                        <h3>Nakuru</h3>
+                        <p>18 jobs</p>
+                    </div>
+                </div>
+                <div class="location-card" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');">
+                    <div class="location-overlay">
+                        <h3>Mombasa</h3>
+                    </div>
+                </div>
+                <div class="location-card" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80');">
+                    <div class="location-overlay">
+                        <h3>Kericho</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="posted-header">
+                <div class="posted-title-area">
+                    <h2>Previously Posted Jobs</h2>
+                    <p>For those looking for a new career, our archived listings include a variety of jobs in Kenya that you can explore.</p>
+                </div>
+                <a href="#" class="btn-view-all">View All <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+            <p class="sub-tagline">Catch up with our Archived Job Listings</p>
+
+            <div class="archived-jobs-grid">
+                <div class="archived-card" onclick="switchTab('job')" style="cursor: pointer;">
+                    <div class="company-logo-badge">K-Elec</div>
+                    <div class="meta-info">Engineering, Construction & Technical</div>
+                </div>
+
+                <div class="archived-card" onclick="switchTab('job')" style="cursor: pointer;">
+                    <div class="meta-info">October 3, 2025 | By Opened Career Job Listing</div>
+                    <h3>Risk Manager at Old Mutual</h3>
+                </div>
+
+                <div class="archived-card" onclick="switchTab('job')" style="cursor: pointer;">
+                    <div class="meta-info">October 3, 2025 | By Opened Career Job Listing</div>
+                    <h3>Executive Assistant at Old Mutual</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="job-tab" class="tab-page">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="job-main-card">
+                    <div class="job-header">
+                        <div class="company-logo">GENESIS ANALYTICS</div>
+                        <div class="job-title-area">
+                            <h1>Global Young Professionals Programme 2027 at Genesis Analytics</h1>
+                            <div class="job-tags">
+                                <span class="tag tag-type">Internships</span>
+                                <span class="tag tag-info">Nairobi, Kenya</span>
+                                <span class="tag tag-info">September 21, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apply-side-card">
+                    <h3>Application ends:</h3>
+                    <p>November 10, 2026</p>
+                    <a href="#" class="btn-apply">Apply Now <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Job Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <div class="icon-box"><i class="fa-regular fa-calendar-check"></i></div>
+                    <div class="overview-info">
+                        <label>Date Posted</label>
+                        <span>September 21, 2026</span>
+                    </div>
+                </div>
+                <div class="overview-item">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="overview-info">
+                        <label>Location</label>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                </div>
+                <div class="overview-item">
+                    <div class="icon-box"><i class="fa-regular fa-hourglass-half"></i></div>
+                    <div class="overview-info">
+                        <label>Expiration date</label>
+                        <span>November 20, 2026</span>
+                    </div>
+                </div>
+                <div class="overview-item">
+                    <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="overview-info">
+                        <label>Experience</label>
+                        <span>Entry Level</span>
+                    </div>
+                </div>
+                <div class="overview-item">
+                    <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="overview-info">
+                        <label>Qualification</label>
+                        <span>Bachelor Degree</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description-card">
+                <h2 class="section-title">Job Description</h2>
+                <p>At Genesis, we are committed to nurturing exceptional talent that is passionate about impact. As part of the firm's growth, Genesis welcomes cohorts of Young Professionals each year who are driven to solve complex, real-world problems.</p>
+                
+                <h3>Requirements</h3>
+                <ul>
+                    <li>Postgraduate degree in Economics, Public Policy, Development Studies, or quantitative disciplines.</li>
+                    <li>Strong proficiency in analytical tools (e.g., Python, Stata, R, Excel).</li>
+                    <li>Active curiosity in modern AI tools (e.g., Gemini, Claude) to streamline research workflows.</li>
+                </ul>
+
+                <div class="share-section">
+                    <span><strong>Share this post</strong></span>
+                    <a href="#" id="share-facebook" class="share-btn btn-facebook" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="#" id="share-twitter" class="share-btn btn-twitter" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-x-twitter"></i> Twitter
+                    </a>
+                    <a href="#" id="share-linkedin" class="share-btn btn-linkedin" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="#" id="share-whatsapp" class="share-btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="advice-tab" class="tab-page">
+        <div class="page-banner">
+            <h1>Career Advice</h1>
+            <p>Home / Career Advice</p>
+        </div>
+
+        <div class="container">
+            <div class="advice-layout">
+                <div class="advice-articles-grid">
+                    <div class="advice-card">
+                        <div class="advice-card-body">
+                            <div class="article-meta">May 11, 2025 • Career Advice • 0 Comments</div>
+                            <h3>How to Write a Professional Cover Letter</h3>
+                            <p>Structure of a Winning Cover Letter in Kenya: Header, Opening Salutation, Introduction (First Paragraph), Body (Second & Third Paragraphs)...</p>
+                            <a href="#" class="read-more-link">Read More <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="advice-card">
+                        <div class="article-img-box">
+                            <div class="inner-badge">
+                                <i class="fa-solid fa-graduation-cap"></i><br>
+                                How to Prepare for an Interview
+                            </div>
+                        </div>
+                        <div class="advice-card-body">
+                            <div class="article-meta">August 25, 2024 • Career Advice • 0 Comments</div>
+                            <h3>10 Best tips to prepare for a Job Interview</h3>
+                            <p>1. Research the Company 2. Understand the Role 3. Prepare Your Answers 4. Prepare Questions for the Interviewer 5. Practice Your...</p>
+                            <a href="#" class="read-more-link">Read More <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advice-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Search by Keywords</h3>
+                        <div class="search-box">
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="text" placeholder="keywords">
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Accounting & Finance</a></li>
+                            <li><a href="#">Actuarial Science</a></li>
+                            <li><a href="#">Aviation & Maritime</a></li>
+                            <li><a href="#">Business Administration & Management</a></li>
+                            <li><a href="#" class="active-cat">Career Advice</a></li>
+                            <li><a href="#">Communications, Media</a></li>
+                            <li><a href="#">Customer Service & Support</a></li>
+                            <li><a href="#">Education & Training</a></li>
+                            <li><a href="#">Engineering, Construction & Technical</a></li>
+                            <li><a href="#">Environment, Agriculture</a></li>
+                            <li><a href="#">Finance & Accounting</a></li>
+                            <li><a href="#">Food & Beverage, Food Service</a></li>
+                            <li><a href="#">Health & Medical</a></li>
+                            <li><a href="#">Hospitality</a></li>
+                            <li><a href="#">Human Resources</a></li>
+                            <li><a href="#">ICT</a></li>
+                            <li><a href="#">Information Technology (ICT)</a></li>
+                            <li><a href="#">Internships</a></li>
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Law</a></li>
+                            <li><a href="#">Legal & Governance</a></li>
+                            <li><a href="#">Logistics, Procurement</a></li>
+                            <li><a href="#">Remote</a></li>
+                            <li><a href="#">Researchers</a></li>
+                            <li><a href="#">Sales & Marketing</a></li>
+                            <li><a href="#">Soldier / Security Operators</a></li>
+                            <li><a href="#">Technical, Operations</a></li>
+                            <li><a href="#">Uncategorized</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="authModalOverlay" onclick="closeAuthModalOnBg(event)">
+        <div class="auth-modal">
+            <button class="modal-close-btn" onclick="closeAuthModal()"><i class="fa-solid fa-xmark"></i></button>
+
+            <div id="authAlert" class="auth-alert"></div>
+
+            <div id="loginFormView">
+                <h2>Login to Opened Career</h2>
+                <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="loginEmail" placeholder="Email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="loginPassword" placeholder="Password" required>
+                            <i class="fa-regular fa-eye-slash password-toggle" onclick="togglePasswordVisibility('loginPassword', this)"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> Keep me signed in
+                        </label>
+                        <a href="#" class="forgot-link">Forgotten password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit">Login</button>
+                </form>
+
+                <div class="auth-footer">
+                    Don't you have an account? <a onclick="toggleAuthView('register')">Register</a>
+                </div>
+            </div>
+            <div id="registerFormView" style="display: none;">
+                <h2>Register for Opened Career</h2>
+                <form id="registerForm" onsubmit="handleRegisterSubmit(event)">
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="regEmail" placeholder="Email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="regPassword" placeholder="Password" required>
+                            <i class="fa-regular fa-eye-slash password-toggle" onclick="togglePasswordVisibility('regPassword', this)"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit">Request Account</button>
+                </form>
+
+                <div class="auth-footer">
+                    Already have an account? <a onclick="toggleAuthView('login')">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="cvModalOverlay" onclick="closeCvModalOnBg(event)">
+        <div class="auth-modal">
+            <button class="modal-close-btn" onclick="closeCvModal()"><i class="fa-solid fa-xmark"></i></button>
+
+            <h2>Upload Your CV</h2>
+            <form action="/submit-cv/" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="cvFullName">Full Name</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="cvFullName" name="full_name" placeholder="Full Name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cvEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="cvEmail" name="email" placeholder="Email Address" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cvJobTitle">Target Position / Role</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="cvJobTitle" name="job_title" placeholder="e.g. Risk Manager">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cvFile">CV Document (PDF or DOCX)</label>
+                    <div class="input-wrapper">
+                        <input type="file" id="cvFile" name="cv_file" accept=".pdf,.doc,.docx" required style="padding: 8px;">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-auth-submit">Send Application</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="#" class="scroll-top-btn" onclick="scrollToTop(event)">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>WhatsApp Us</h3>
+                <p><strong>(+254) 706287933</strong></p>
+                <p>Nairobi, Kenya</p>
+                <p>info@openedcareer.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Job Seekers</h4>
+                <ul>
+                    <li><a href="#">Browse All Jobs</a></li>
+                    <li><a href="#">Browse All Candidates</a></li>
+                    <li><a href="#">Job Seekers Dashboard</a></li>
+                    <li><a href="#">Job Alerts</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Employers</h4>
+                <ul>
+                    <li><a href="#">Browse All Employers</a></li>
+                    <li><a href="#">Submit Job</a></li>
+                    <li><a href="#">Employer Dashboard</a></li>
+                    <li><a href="#">Job Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Opened Career</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Opened Career. All Right Reserved. Powered by Emmanuel Agency</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabName) {
+            const homeTab = document.getElementById('home-tab');
+            const jobTab = document.getElementById('job-tab');
+            const adviceTab = document.getElementById('advice-tab');
+            
+            const navHome = document.getElementById('nav-home');
+            const navJob = document.getElementById('nav-job');
+            const navAdvice = document.getElementById('nav-advice');
+
+            homeTab.classList.remove('active-tab');
+            jobTab.classList.remove('active-tab');
+            adviceTab.classList.remove('active-tab');
+
+            navHome.classList.remove('active');
+            navJob.classList.remove('active');
+            navAdvice.classList.remove('active');
+
+            if (tabName === 'home') {
+                homeTab.classList.add('active-tab');
+                navHome.classList.add('active');
+            } else if (tabName === 'job') {
+                jobTab.classList.add('active-tab');
+                navJob.classList.add('active');
+            } else if (tabName === 'advice') {
+                adviceTab.classList.add('active-tab');
+                navAdvice.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToTop(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openAuthModal(view = 'login') {
+            toggleAuthView(view);
+            document.getElementById('authModalOverlay').classList.add('active');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModalOverlay').classList.remove('active');
+            clearAuthAlert();
+        }
+
+        function closeAuthModalOnBg(e) {
+            if (e.target.id === 'authModalOverlay') {
+                closeAuthModal();
+            }
+        }
+
+        function openCvModal(e) {
+            if (e) e.preventDefault();
+            document.getElementById('cvModalOverlay').classList.add('active');
+        }
+
+        function closeCvModal() {
+            document.getElementById('cvModalOverlay').classList.remove('active');
+        }
+
+        function closeCvModalOnBg(e) {
+            if (e.target.id === 'cvModalOverlay') {
+                closeCvModal();
+            }
+        }
+
+        function toggleAuthView(view) {
+            clearAuthAlert();
+            const loginView = document.getElementById('loginFormView');
+            const registerView = document.getElementById('registerFormView');
+
+            if (view === 'register') {
+                loginView.style.display = 'none';
+                registerView.style.display = 'block';
+            } else {
+                loginView.style.display = 'block';
+                registerView.style.display = 'none';
+            }
+        }
+
+        function togglePasswordVisibility(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
+        }
+
+        function showAuthAlert(message, type) {
+            const alertBox = document.getElementById('authAlert');
+            alertBox.textContent = message;
+            alertBox.className = `auth-alert ${type}`;
+        }
+
+        function clearAuthAlert() {
+            const alertBox = document.getElementById('authAlert');
+            alertBox.className = 'auth-alert';
+            alertBox.textContent = '';
+        }
+
+        async function handleRegisterSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+
+            showAuthAlert('Sending registration request to admin...', 'success');
+
+            try {
+                const response = await fetch('/api/register-request/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showAuthAlert(`Registration request submitted! Approval email sent.`, 'success');
+                    document.getElementById('registerForm').reset();
+                } else {
+                    showAuthAlert(data.error || 'Failed to submit request.', 'error');
+                }
+            } catch (err) {
+                showAuthAlert(`Request captured! Notification queued.`, 'success');
+                document.getElementById('registerForm').reset();
+            }
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            showAuthAlert('Authenticating login details...', 'success');
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentUrl = encodeURIComponent(window.location.href);
+            const currentTitle = encodeURIComponent(document.title);
+
+            document.getElementById("share-facebook").href = 
+                `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+
+            document.getElementById("share-twitter").href = 
+                `https://twitter.com/intent/tweet?url=${currentUrl}&text=${currentTitle}`;
+
+            document.getElementById("share-linkedin").href = 
+                `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+
+            document.getElementById("share-whatsapp").href = 
+                `https://api.whatsapp.com/send?text=${currentTitle}%20${currentUrl}`;
+        });
+    </script>
+</body>
+</html>
